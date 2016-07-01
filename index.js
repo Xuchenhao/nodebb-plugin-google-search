@@ -12,7 +12,7 @@ module.exports = {
 			res.redirect(301, searchURL(req.params.term || '')).end();
 		});
 		data.router.route('/api/search/:term?').all(function(req, res, next) {
-			res.status(308).json(searchURL(req.params.term || '')).end();
+			res.status(308).json({external: searchURL(req.params.term || '')}).end();
 		});
 
 		callback();
