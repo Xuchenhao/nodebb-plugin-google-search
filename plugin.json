@@ -1,0 +1,11 @@
+{
+	"id": "nodebb-plugin-google-search",
+	"name": "Google Search",
+	"description": "Redirect search queries to Google.",
+	"url": "https://github.com/BenLubar/nodebb-plugin-google-search",
+	"library": "./index.js",
+	"hooks": [
+		{"hook": "static:app.load", "method": "init"},
+		{"hook": "filter:search.query", "method": "dummy"}
+	]
+}
