@@ -9,10 +9,12 @@ function searchURL(term) {
 module.exports = {
 	"init": function(data, callback) {
 		data.router.route('/search/:term?').all(function(req, res, next) {
-			res.redirect(301, searchURL(req.params.term || '')).end();
+			res.redirect(301, searchURL(req.params.term || ''));
+			res.end();
 		});
 		data.router.route('/api/search/:term?').all(function(req, res, next) {
-			res.status(308).json({external: searchURL(req.params.term || '')}).end();
+			res.status(308).json({external: searchURL(req.params.term || '')});
+			res.end();
 		});
 
 		callback();
